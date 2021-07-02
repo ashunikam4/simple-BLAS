@@ -1,6 +1,7 @@
 #include <stdio.h>
 #include <stdlib.h>
 #include <string.h>
+#include <time.h>
 #include "solver/solver.h"
 #include "plotting/plotter.h"
 #include "plotting/drawing/algo.h"
@@ -69,6 +70,8 @@ int main(int argc, char* argv[]){
     double res[2];
     enum solve_rflag flag;
 
+    clock_t start, end;
+    start = clock();
     switch(salgo){
         case MATINV:
             flag = solveByMatrixInversion(acoeff, bcoeff, res);
@@ -76,7 +79,8 @@ int main(int argc, char* argv[]){
         case SUBS:
             flag = solveBySubstitution(acoeff, bcoeff, res);
     }
-    
+    end = clock();
+    printf("Solver exectution time: %lf s\n", (double)(end - start)/CLOCKS_PER_SEC);
     
     switch(flag) {
         case SGL_SOL: 
@@ -89,7 +93,10 @@ int main(int argc, char* argv[]){
             printf("No solution exists\n\n");
     }
 
+    start = clock();
     plot(acoeff, bcoeff, res, flag, dalgo, plt_h, plt_w, scale_x, scale_y);
+    end = clock();
+    printf("Plotter exectution time: %lf s\n", (double)(end - start)/CLOCKS_PER_SEC);
     printf("DONE!\n");
     return 0;
 }
