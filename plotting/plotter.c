@@ -19,9 +19,10 @@ void draw(char** ws, int plt_h, int plt_w, double coeff[3], int algo, char sym) 
     
     switch(algo){
         case DSC:
-           directScanConversion(ws, coeff, plt_h, plt_w, sym);
-           break;
+            directScanConversion(ws, coeff, plt_h, plt_w, sym);
+            break;
         case DDA:
+            digitalDifferentialAnalyzer(ws, coeff, plt_h, plt_w, sym);
             break;
         case BRS:
             break;
