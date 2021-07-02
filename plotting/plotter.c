@@ -25,7 +25,7 @@ void draw(char** ws, int plt_h, int plt_w, double coeff[3], int algo, char sym) 
             digitalDifferentialAnalyzer(ws, coeff, plt_h, plt_w, sym);
             break;
         case BRS:
-            break;
+            bresenhamAlgorithm(ws, coeff, plt_h, plt_w, sym);
     }
 }
 
