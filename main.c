@@ -9,12 +9,12 @@
 int main(int argc, char* argv[]){
     double acoeff[3];
     double bcoeff[3];
-    enum solve_algo salgo = MATINV;
-    enum draw_algo dalgo = DSC;
+    enum solve_algo salgo = SUBS;
+    enum draw_algo dalgo = DDA;
     int plt_h = -1;
     int plt_w = -1; 
-    int scale_x = -1; 
-    int scale_y = -1; 
+    double scale_x = -1; 
+    double scale_y = -1; 
 
     if(argc < 7) {
         printf("Invalid Input : Specifying 2 x 3 coefficients is required\n");
@@ -71,13 +71,16 @@ int main(int argc, char* argv[]){
     enum solve_rflag flag;
 
     clock_t start, end;
-    start = clock();
     switch(salgo){
         case MATINV:
+            start = clock();
             flag = solveByMatrixInversion(acoeff, bcoeff, res);
+            end = clock();
             break;
         case SUBS:
+            start = clock();
             flag = solveBySubstitution(acoeff, bcoeff, res);
+            end = clock();
     }
     end = clock();
     printf("Solver exectution time: %lf s\n", (double)(end - start)/CLOCKS_PER_SEC);

@@ -120,7 +120,10 @@ void plot(double acoeff[3], double bcoeff[3], double res[2], enum solve_rflag re
             draw(ws, plt_h, plt_w, bcoeff, algo, '2');
             break;
         case INF_SOL:
-            draw(ws, plt_h, plt_w, acoeff, algo, '1');       
+            draw(ws, plt_h, plt_w, acoeff, algo, '1');
+            break;
+        case NO_SOL:
+            break;
     }
     show(ws, plt_h, plt_w, res, scale_x, scale_y);
 }
