@@ -113,5 +113,6 @@ int main(int argc, char* argv[]){
     printf("Plotter exectution time: %lf s\n", (double)(end - start)/CLOCKS_PER_SEC);
     
     printf("DONE!\n");
+    printf("========================================\n");
     return 0;
 }
