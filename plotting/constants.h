@@ -1,3 +1,4 @@
+// constants used as plotter attributes defaults
 #ifndef CONSTANTS_H
 #define CONSTANTS_H
 
