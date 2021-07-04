@@ -62,8 +62,8 @@ Arguments are plot height, plot width, scale along x axis, and scale along y axi
 ~$ ./app 1.0 1.0 2.0 1.0 -1.0 0.0 -c 75 35 -1 -1
 ```
 
-## Running Test
+## Running Tests
 
-1. In `test.sh`, uncomment the tests you want to run
-2. run `test.sh`
+1. In `tests.sh`, uncomment the tests you want to run
+2. run `tests.sh`
 3. check `output.txt` for results
