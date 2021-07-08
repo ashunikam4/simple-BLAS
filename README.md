@@ -21,7 +21,7 @@ Clone the repository and run make
 ### Basic
 The equation are represented as:
 - a *x* + b *y* = c
-- p *x* + q *y* = c
+- p *x* + q *y* = r
 
 where *x* and *y* are cartesian variables. To run the app with default options:
 ```bash
