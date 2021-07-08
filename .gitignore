@@ -54,3 +54,6 @@ dkms.conf
 
 # output
 output.txt
+
+# docs
+docs/*

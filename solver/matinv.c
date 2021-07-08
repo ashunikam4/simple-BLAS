@@ -30,7 +30,8 @@ enum solve_rflag solveByMatrixInversion(double acoeff[], double bcoeff[], double
     
     // determinant = 0 => a / b = p / q => infinite or 0 solutions
     if(det == 0) {
-        if((acoeff[0] * bcoeff[2]) == (bcoeff[0] * acoeff[2])) // a / b = p / q = c / r
+        if((acoeff[0] * bcoeff[2]) == (bcoeff[0] * acoeff[2]) && 
+           (acoeff[1] * bcoeff[2]) == (bcoeff[1] * acoeff[2])) // a / b = p / q = c / r
             return INF_SOL;
         else 
             return NO_SOL;

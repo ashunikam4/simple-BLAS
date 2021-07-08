@@ -92,7 +92,7 @@ int main(int argc, char* argv[]){
             end = clock();
     }
     end = clock();
-    printf("Solver exectution time: %lf s\n", (double)(end - start)/CLOCKS_PER_SEC);
+    printf("Solver execution time: %lf s\n", (double)(end - start)/CLOCKS_PER_SEC);
     
     // Priting solutions as text
     switch(flag) {
@@ -110,7 +110,7 @@ int main(int argc, char* argv[]){
     start = clock();
     plot(acoeff, bcoeff, res, flag, dalgo, plt_h, plt_w, scale_x, scale_y);
     end = clock();
-    printf("Plotter exectution time: %lf s\n", (double)(end - start)/CLOCKS_PER_SEC);
+    printf("Plotter execution time: %lf s\n", (double)(end - start)/CLOCKS_PER_SEC);
     
     printf("DONE!\n");
     printf("========================================\n");
