@@ -67,3 +67,87 @@ Arguments are plot height, plot width, scale along x axis, and scale along y axi
 1. In `tests.sh`, uncomment the tests you want to run
 2. run `tests.sh`
 3. check `output.txt` for results
+
+## Output Format
+
+* The solver dumps following things: 
+  * Time required to solve
+  * The type of solution (single, inifite or no solution)
+  * The solution if exists
+
+
+    For matinv solver, the intermediate results e.g. determinant and inverted matrix values are also shown.
+
+* The plot is created such that **the solution is located at the center of the plot**. For infinite solutions case, an arbitrary point on the lines is chosen to be located at center.
+
+* `1` and `2` are used to show the lines.
+*  5 markings are shown on X axis using `a, b, c, d, e` and on Y axis using `p, q, r, s, t` for reference. The values correspoding to these markings are displayed below the plot.
+
+```bash
+# Example
+~$ ./app 1.0 1.0 2.0 1.0 -1.0 0.0  
+
+Solver execution time: 0.000002 s
+Single solution exists : (x = 1.0000, y = 1.0000)
+
+Plotting the lines on cartesian plane ...
+1 : 1.0000 x + 1.0000 y = 2.0000
+2 : 1.0000 x + -1.0000 y = 0.0000
+
+
+ |11                                                                       22
+ |  11                                                                   22  
+ |    11                                                               22    
+ |      111                                                         222      
+ |         11                                                     22         
+ |           11                                                 22           
+t|             11                                             22             
+ |               11                                         22               
+ |                 11                                     22                 
+ |                   11                                 22                   
+ |                     111                           222                     
+ |                        11                       22                        
+ |                          11                   22                          
+s|                            11               22                            
+ |                              11           22                              
+ |                                11       22                                
+ |                                  11   22                                  
+ |                                    222                                    
+ |                                  22   11                                  
+ |                                22       11                                
+r|                              22           11                              
+ |                            22               11                            
+ |                          22                   11                          
+ |                        22                       11                        
+ |                     222                           111                     
+ |                   22                                 11                   
+ |                 22                                     11                 
+q|               22                                         11               
+ |             22                                             11             
+ |           22                                                 11           
+ |         22                                                     11         
+ |      222                                                         111      
+ |    22                                                               11    
+ |  22                                                                   11  
+p|22                                                                       11
+ |___________________________________________________________________________
+  a              b              c              d              e              
+
+ p :     -0.3125
+ q :      0.2125
+ r :      0.7375
+ s :      1.2625
+ t :      1.7875
+
+
+ a :     -0.3125
+ b :      0.2125
+ c :      0.7375
+ d :      1.2625
+ e :      1.7875
+
+
+Plotter execution time: 0.000075 s
+DONE!
+========================================
+```
