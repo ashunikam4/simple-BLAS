@@ -1,4 +1,4 @@
-# simple-BLAS (WIP)
+# simple-BLAS
 
 This is a rudimetary BLAS implementation in C, supporting just 2 operations:
 - Solving system of 2 equations in 2 variables
